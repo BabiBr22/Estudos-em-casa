@@ -1,0 +1,38 @@
+body{
+    /* Primeiro, remova margens padrão */
+    margin:0;
+        /* Faça o body ocupar toda a altura da tela */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+div{
+    background-color:rgb(211, 211, 211);
+    padding: 40px;
+    padding-top:60px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    /*O position: relative permite posicionar um elemento em relação à sua posição original */
+    position:relative;
+    top:-20px;
+}
+
+input{
+    padding: 3px;
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;  
+    border-right: none;
+    border-radius: 2px;
+}

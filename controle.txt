@@ -1,0 +1,62 @@
+Estrutura de Sistema para Oficina de Motos
+Vou criar uma tabela detalhada com todas as abas e componentes necessários, como se fosse um menu de um programa que você usa no dia a dia:
+1. Menu Principal
+Dashboard (Página Inicial)
+Resumo de vendas do dia
+Peças com estoque baixo (alertas)
+Serviços agendados para hoje
+Gráfico de vendas semanal
+Status das ordens de serviço
+Cadastros Básicos
+| Aba | Componentes |
+|-----|-------------|
+| Clientes | - Formulário de cadastro<br>- Nome completo<br>- CPF/CNPJ<br>- Telefone/WhatsApp<br>- Endereço<br>- E-mail<br>- Motos do cliente |
+| Motos | - Marca<br>- Modelo<br>- Ano<br>- Placa<br>- Quilometragem<br>- Proprietário<br>- Histórico de serviços |
+| Funcionários | - Dados pessoais<br>- Função<br>- Comissões<br>- Histórico de serviços realizados |
+Estoque
+| Aba | Componentes |
+|-----|-------------|
+| Cadastro de Peças | - Código da peça<br>- Nome<br>- Descrição<br>- Marca<br>- Aplicação (modelos compatíveis)<br>- Localização na prateleira<br>- Foto da peça |
+| Controle de Estoque | - Quantidade atual<br>- Estoque mínimo<br>- Estoque máximo<br>- Valor de custo<br>- Valor de venda<br>- Margem de lucro |
+| Entrada de Peças | - Data de entrada<br>- Fornecedor<br>- Nota fiscal<br>- Quantidade<br>- Valor unitário |
+| Saída de Peças | - Data de saída<br>- Motivo (venda/uso interno/defeito)<br>- Quantidade<br>- Ordem de serviço vinculada |
+Serviços
+| Aba | Componentes |
+|-----|-------------|
+| Ordem de Serviço | - Número da OS<br>- Cliente<br>- Moto<br>- Data de entrada<br>- Previsão de entrega<br>- Mecânico responsável<br>- Serviços a realizar<br>- Peças utilizadas<br>- Status do serviço |
+| Tipos de Serviço | - Nome do serviço<br>- Descrição<br>- Tempo estimado<br>- Valor base<br>- Peças normalmente utilizadas |
+| Agenda | - Calendário de serviços<br>- Horários disponíveis<br>- Agendamentos<br>- Mecânicos disponíveis |
+Financeiro
+| Aba | Componentes |
+|-----|-------------|
+| Vendas | - Registro de vendas<br>- Nota fiscal<br>- Forma de pagamento<br>- Parcelamento<br>- Desconto aplicado |
+| Contas a Receber | - Parcelas a vencer<br>- Clientes em atraso<br>- Histórico de pagamentos |
+| Contas a Pagar | - Fornecedores<br>- Despesas fixas<br>- Despesas variáveis<br>- Data de vencimento |
+| Fluxo de Caixa | - Entradas<br>- Saídas<br>- Saldo atual<br>- Projeção mensal |
+Relatórios
+| Tipo | Informações |
+|------|-------------|
+| Vendas | - Por período<br>- Por mecânico<br>- Por tipo de serviço<br>- Por peça |
+| Estoque | - Inventário atual<br>- Peças mais vendidas<br>- Peças sem giro<br>- Necessidade de compra |
+| Clientes | - Frequência de visitas<br>- Valor médio gasto<br>- Serviços mais utilizados |
+| Financeiro | - Demonstrativo de resultados<br>- Lucratividade<br>- Inadimplência |
+Configurações
+Dados da empresa
+Usuários e permissões
+Backup do sistema
+Configurações de impressão
+Personalização de documentos
+Sugestões de Funcionalidades Extras
+App para Clientes
+Agendamento online
+Acompanhamento de OS
+Histórico de serviços
+Integração com WhatsApp
+Envio de orçamentos
+Aviso de conclusão de serviço
+Lembretes de revisão
+Controle de Garantia
+Peças em garantia
+Serviços em garantia
+Alertas de vencimento
+Esta estrutura é como uma caixa de ferramentas bem organizada: cada gaveta (aba) tem suas ferramentas específicas (componentes) para realizar determinado trabalho. Você pode começar implementando as funcionalidades mais básicas e ir expandindo conforme a necessidade da sua oficina.
