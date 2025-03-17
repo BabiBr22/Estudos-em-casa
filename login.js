@@ -1,6 +1,7 @@
 function btLoginEnviar(){
     const nomeLogin = document.getElementById("nome");
     const senhaLogin = document.getElementById("senha");
+    let mensagem = document.getElementById("mensagem");
 
     const usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
@@ -11,10 +12,12 @@ function btLoginEnviar(){
 
     if(usuarioEncontrado){
         alert("Login bem sucedido!");
+        // Guarda na sessão que usuário está logado
+        sessionStorage.setItem("usuarioLogado", "true");
         window.location.href ="home.html";
         
     }else{
-        alert("Você ainda não está registrado!")
+        mensagem.innerHTML = `Você ainda não está registrado! <a class="linkMensagem" href="index.html">Registre-se</a>`;
     }
 }
 
