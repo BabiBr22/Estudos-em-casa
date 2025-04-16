@@ -1,0 +1,108 @@
+*{
+    margin:0%;
+    padding:0%;
+    
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    position: relative; /* Necessário para o pseudo-elemento funcionar */
+    overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/gifCafe.gif');
+    background-size: cover;/* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat;
+    background-position: center; /* Centraliza a imagem */
+    z-index: -1; /* Coloca a camada atrás do conteúdo */
+    /* filter: blur(2px); */
+}
+
+header{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(37, 37, 37, 0.637);
+    /* background-image: url('../img/gifGalaxia.gif'); */
+    background-repeat: repeat;
+    background-position: top left;
+    background-size:auto;
+    width: 100%;
+    height:10vh;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+nav{
+    justify-content: center;
+    align-items: center;
+}
+
+.div-central {
+    background-color: rgba(44, 44, 44, 0.863);
+    width: 40%;
+    height: 60vh;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.986);
+    position: absolute; /* Torna a div posicionada em relação ao body */
+    top: 500%; /* Move a div 50% para baixo */
+    left: 50%; /* Move a div 50% para a direita */
+    transform: translate(-50%, -50%); /* Centraliza a div ajustando o deslocamento */
+    text-align: center;
+}
+
+.fonte-principal{
+    font-family: 'Roboto', 'Arial', sans-serif; /* Usa Roboto, depois Arial, e por fim sans-serif */
+} 
+p{
+    color: white;
+}  
+
+.div-escritos {
+    display: flex; /* Torna o contêiner flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-direction: column; /* Organiza os itens em coluna */
+    gap: 10px; /* Adiciona espaço entre os itens */
+    margin-top: 5%;
+}
+
+textarea {
+    width: 80%; /* Define a largura do textarea */
+    height: 34vh; /* Define a altura do textarea */
+    resize: none; /* Impede o redimensionamento */
+    margin-bottom: 10px; /* Espaço entre o textarea e o botão */
+}
+
+button {
+    background-color: rgba(29, 28, 28, 0.979);
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    height: auto;
+    width: 20%; /* Ajusta a largura do botão */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.986);
+    border-radius: 4px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.mensagem-p{
+    color: white;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bolder;
+    margin-top: 10px; /* Espaço entre o botão e a mensagem */
+    text-align: center; /* Centraliza o texto da mensagem */
+}

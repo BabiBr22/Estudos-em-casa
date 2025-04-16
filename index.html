@@ -3,24 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="stylesheet" href="registro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Cantinho</title>
+    <link rel="stylesheet" href="/css/index.css">
+
 </head>
 
 
 <body>
-    <div>
-        <h1>Registro</h1>
-        <input type="text" placeholder="Digite seu nome" id="nome">
-        <input type="password" placeholder="Digite sua senha" id="senha">
-        <input type="password" placeholder="Confirme sua senha" id="senhaConfirma">
-        <button onclick="btRegistrarEnviar()">Enviar</button>
+    <header>
+        <nav>
+
+
+        </nav>
+    </header>
+
+    <div class="div-central">
+        <div class="div-escritos">
+            <h1 class="fonte-principal">Meu Cantinho</h1>
+            <p class="fonte-principal">Olá, seja bem-vindo, deixe uma mensagem qualquer aqui!</p>
+            <textarea id="exibirMensagem" placeholder="Digite sua mensagem..."></textarea>
+            <button onclick="enviarMensagem()">Enviar</button>
+        </div>
+
     </div>
 
-    <script src="registro.js"></script>
-</body>
 
+
+    <script src="/js/index.js"></script>
+
+</body>
 
 </html>

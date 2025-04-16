@@ -1,0 +1,8 @@
+npm init -y
+npm install express sqlite3 body-parser
+npm install --save-dev nodemon
+
+
+//express: Para criar o servidor backend.
+//sqlite3: Para gerenciar o banco de dados SQLite.
+//body-parser: Para processar os dados enviados pelo frontend.
