@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(253, 248, 231);
+}
+
+#divHeader {
+    background-color: rgb(56, 56, 56);
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#menuHamburguer {
+    width: 50px;
+    height: 40px;
+}
+
+#logoLucasMotos {
+    width: 100px;
+    height: 63px;
+}
+
+#fotosMenu {
+    display: flex;
+    flex-direction: row;
+}
+
+.blocosFotos {
+    background-color: rgb(202, 201, 201);
+    width: 300px;
+    height: 39px;
+    justify-content: center;
+    flex-direction: row;
+    
+}

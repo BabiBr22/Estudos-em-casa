@@ -1,7 +1,9 @@
 npm init -y
 npm install express sqlite3 body-parser
 npm install --save-dev nodemon
-
+npm install cors
+npm install -g localtunnel
+lt --port 3000
 
 //express: Para criar o servidor backend.
 //sqlite3: Para gerenciar o banco de dados SQLite.
