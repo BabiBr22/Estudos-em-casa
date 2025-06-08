@@ -1,43 +1,545 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(253, 248, 231);
+    background-color: rgb(151, 151, 151);
+    font-family: Arial, sans-serif;
 }
 
 #divHeader {
     background-color: rgb(56, 56, 56);
     position: fixed;
     width: 100vw;
-    height: auto;
+    height: 70px;
     left: 0;
-    right: 0;
-    padding: 0;
-    margin: 0;
+    top: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgb(58, 58, 58);
 }
 
 #menuHamburguer {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#menuHamburguer div {
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 #logoLucasMotos {
     width: 100px;
     height: 63px;
+    margin-top: -12px;
+}
+
+/* Menu lateral */
+#menuHamburguer {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1200; /* pra ficar acima do menu */
+}
+
+#menuHamburguer div {
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Estado ativo (quando o menu está aberto) */
+#menuHamburguer.ativo div:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+#menuHamburguer.ativo div:nth-child(2) {
+    opacity: 0;
+}
+
+#menuHamburguer.ativo div:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+#menuLateral {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-240px); /* fora da tela */
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+#menuLateral.mostrar {
+    transform: translateX(0); /* aparece */
+}
+
+#menuLateral ul {
+    list-style: none;         /* Remove as bolinhas */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                /* Espaço entre os itens */
+}
+
+#menuLateral li {
+    /* Espaço e alinhamento dos itens */
+}
+
+#menuLateral a {
+    text-decoration: none;    /* Remove o sublinhado */
+    color: #333;              /* Cor do texto */
+    font-size: 1.1rem;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+    display: block;
+}
+
+#menuLateral a:hover {
+    background: #d32341;      /* Cor de fundo ao passar o mouse */
+    color: #fff;              /* Cor do texto ao passar o mouse */
+}
+
+
+.banner-parallax {
+  height: 100vh;
+  background-image: url('https://via.placeholder.com/1200x800?text=Lucas+Motos');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+
+.conteudo-banner {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 30px 60px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px black;
 }
 
 #fotosMenu {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    position: relative;
+    z-index: 2;
 }
 
-.blocosFotos {
-    background-color: rgb(202, 201, 201);
-    width: 300px;
-    height: 39px;
-    justify-content: center;
-    flex-direction: row;
+.blocoFoto {
+    border-radius: 8px;
+    width: 220px;
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.blocoFoto img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
     
+}
+
+a img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    filter: brightness(0.9);
+}
+
+.blocoFoto p {
+    text-align: center;
+    font-size: 1rem;
+    color: brown;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #logoLucasMotos {
+        width: 70px;
+        height: 45px;
+    }
+
+    #menuHamburguer {
+        width: 30px;
+        height: 25px;
+    }
+
+    #fotosMenu {
+        gap: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #divHeader {
+        height: 50px;
+    }
+
+    #logoLucasMotos {
+        width: 50px;
+        height: 32px;
+    }
+
+    #fotosMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .blocoFoto {
+        width: 80vw;
+    }
+}
+
+.parallax-container {
+  position: relative;
+  height: 500px; /* ou 100vh se quiser ocupar a tela toda */
+  overflow: hidden;
+}
+
+.banner-layer {
+  background-image: url("https://blog.venturas.com.br/wp-content/uploads/2017/07/104137-fotografia-outdoor-quer-dicas-de-como-tirar-fotos-de-paisagem.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo-banner {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+  z-index: 2;
+}
+
+.conteudo-banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.conteudo-banner p {
+  font-size: 1.5rem;
+}
+
+.footer-custom {
+    background: #333;
+    color: #fff;
+    padding: 32px 0 16px 0;
+    text-align: center;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.footer-col {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.footer-col img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.footer-copy {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+    .footer-row {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .footer-col {
+        justify-content: center;
+    }
+}
+
+.servicos-main {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 90px 16px 0 16px; /* 90px de padding-top para descer o conteúdo */
+}
+
+.servicos-intro {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.servicos-intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #d32341;
+}
+
+.servicos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+
+.servico-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    width: 260px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.servico-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(211,35,65,0.13);
+}
+
+.servico-item img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+.servico-item h3 {
+    color: #d32341;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.servico-item p {
+    color: #444;
+    font-size: 1rem;
+}
+
+.produtos-main {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 90px 16px 0 16px;
+}
+
+.produtos-intro {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.produtos-intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #d32341;
+}
+
+.produtos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+
+.produto-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    width: 260px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.produto-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(211,35,65,0.13);
+}
+
+.produto-item img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+.produto-item h3 {
+    color: #d32341;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.produto-item p {
+    color: #444;
+    font-size: 1rem;
+}
+
+.sobre-main {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 90px 16px 0 16px;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sobre-texto {
+    flex: 1 1 340px;
+    min-width: 280px;
+}
+
+.sobre-texto h1 {
+    color: #d32341;
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.sobre-texto p {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.sobre-img {
+    flex: 0 0 320px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sobre-img img {
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .sobre-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .sobre-img img {
+        height: 320px;
+        max-width: 90vw;
+    }
+}
+
+.contato-main {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 90px 16px 0 16px;
+}
+
+.contato-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.contato-container h1 {
+    color: #d32341;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.contato-mapa {
+    margin: 24px 0 32px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.contato-infos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #222;
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 10px 18px;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.contato-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    background: none;
 }
