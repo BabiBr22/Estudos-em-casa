@@ -137,13 +137,17 @@ body {
 
 
 .conteudo-banner {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("logoLetriroBranco.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* ou 'contain' se preferir ver a imagem inteira */
     color: white;
     padding: 30px 60px;
     border-radius: 10px;
     font-size: 2rem;
     text-align: center;
-    box-shadow: 0 0 10px black;
+    width: 500px;
+    height: 260px;
 }
 
 #fotosMenu {
@@ -233,7 +237,7 @@ a img:hover {
 }
 
 .banner-layer {
-  background-image: url("https://blog.venturas.com.br/wp-content/uploads/2017/07/104137-fotografia-outdoor-quer-dicas-de-como-tirar-fotos-de-paisagem.jpg");
+  background-image: url("bannerFoto.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
